@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
             "    \"description\": \"Ceci est une exposition de test\",\n" +
             "    \"author\": \"590a9bfbbeec60be05553465\",\n" +
             "    \"longitude\": 39.9506,\n" +
-            "    \"latitude\": 116.3386,\n" +
+            "    \"latitude\": 116.3384,\n" +
             "    \"__v\": 0,\n" +
             "    \"arts\": [\n" +
             "      {\n" +
@@ -240,17 +240,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        if (marker.getTitle().equals("Test")){
-            progressDialog = ProgressDialog.show(getContext(), "Please wait.",
-                    "Fetching route information.", true);
-            Routing routing = new Routing.Builder()
-                    .travelMode(Routing.TravelMode.WALKING)
-                    .withListener(this)
-                    .waypoints(myPos, marker.getPosition())
-                    .build();
-            routing.execute();
-            return true;
-        }
+        progressDialog = ProgressDialog.show(getContext(), "Please wait.", "Fetching route information.", true);
+        Routing routing = new Routing.Builder()
+                        .travelMode(Routing.TravelMode.WALKING)
+                        .withListener(this)
+                        .waypoints(myPos, marker.getPosition())
+                        .build();
+        routing.execute();
         return true;
     }
 

@@ -131,13 +131,6 @@ public class Profil_Gestion extends AppCompatActivity {
         noInternet.show();
     }
 
-//    public void startARActivity(View view) {
-    public void startARActivity() {
-        Intent intent = new Intent(Profil_Gestion.this, ARCameraViewActivity.class);
-        startActivity(intent);
-    }
-
-
     private void loadNavHeader(){
         // TODO : Load profil information get by call api
     }
@@ -210,9 +203,8 @@ public class Profil_Gestion extends AppCompatActivity {
                         CURRENT_TAG = TAG_HOME;
                         break;
                     case R.id.nav_ar:
-                        startARActivity();
-//                        navItemIndex = 1;
-//                        CURRENT_TAG = TAG_AR;
+                        navItemIndex = 1;
+                        CURRENT_TAG = TAG_AR;
                         break;
                     case R.id.nav_profil:
                         navItemIndex = 2;
